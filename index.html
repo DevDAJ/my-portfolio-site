@@ -2,27 +2,21 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Resume</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap"
+			rel="stylesheet" />
 		<style>
-			* {
-				height: 100%;
-				width: 100%;
-				margin: 0;
-				overflow: hidden;
-			}
-			iframe {
-				margin: 0px;
-				height: 100vh;
-			}
+			@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap');
 		</style>
+		<title>DAJ</title>
 	</head>
-	<body>
-		<iframe
-			src="https://drive.google.com/file/d/1oC97NEg6kdN60Q5nHk5uXQHvfSNOtBiS/preview"
-			width="100%"
-			height="auto"
-			allow="autoplay"></iframe>
+	<body
+		class="bg-main text-white bg-blend-color-burn min-h-screen flex justify-center">
+		<div id="root" class="flex flex-col justify-between"></div>
+		<script type="module" src="/src/main.tsx"></script>
 	</body>
 </html>
