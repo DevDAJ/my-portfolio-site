@@ -18,7 +18,7 @@ function NavLogo() {
 	return (
 		<div className='text-2xl hidden md:flex'>
 			<Link to='/'>
-				<img alt='site logo'></img> <span>{'<DAJ/>'}</span>
+				<span>{'<DAJ/>'}</span>
 			</Link>
 		</div>
 	);
