@@ -25,6 +25,7 @@ const About: FC = ({}) => {
 					<strong>My resume</strong>
 				</h1>
 				<iframe
+					title='resume'
 					src='https://drive.google.com/file/d/1oC97NEg6kdN60Q5nHk5uXQHvfSNOtBiS/preview'
 					width='auto'
 					height='auto'
