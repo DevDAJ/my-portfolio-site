@@ -66,6 +66,7 @@ function Skills() {
 			<img
 				width={100}
 				height={'auto'}
+				alt={`${skill['name']} icon`}
 				className='m-auto aspect-square object-contain'
 				src={skill['icon']}></img>
 			<span>{skill['name']}</span>
