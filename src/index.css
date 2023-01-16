@@ -27,7 +27,7 @@
 	background: #555;
 }
 body {
-	background-image: url('/background.jpg');
+	background-image: url('/background.webp');
 	background-repeat: no-repeat;
 	background-position: right;
 	background-size: cover;
@@ -37,7 +37,7 @@ body {
 	width: clamp(280px, 100vw, 1270px);
 }
 .hero {
-	background-image: url('/hero-illustration.png');
+	background-image: url('/hero-illustration.webp');
 	background-repeat: no-repeat;
 	background-position: right;
 	background-size: contain;
