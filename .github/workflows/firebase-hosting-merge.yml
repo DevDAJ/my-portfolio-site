@@ -9,6 +9,15 @@ name: Deploy to Firebase Hosting on merge
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
+    env:
+      VITE_API_KEY: '${{ secrets.VITE_API_KEY }}'
+      VITE_APIKEY: '${{ secrets.VITE_APIKEY }}'
+      VITE_AUTH_DOMAIN: '${{ secrets.VITE_AUTH_DOMAIN }}'
+      VITE_PROJECT_ID: '${{ secrets.VITE_PROJECT_ID }}'
+      VITE_STORAGE_BUCKET: '${{ secrets.VITE_STORAGE_BUCKET }}'
+      VITE_SENDER_ID: '${{ secrets.VITE_SENDER_ID }}'
+      VITE_APP_ID: '${{ secrets.VITE_APP_ID }}'
+      VITE_MEASUREMENT_ID: '${{ secrets.VITE_MEASUREMENT_ID }}'
     steps:
       - uses: actions/checkout@v2
       - run: npm ci && npm run build
