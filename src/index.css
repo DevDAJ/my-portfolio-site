@@ -5,7 +5,7 @@
 	font-family: 'Source code pro';
 	src: local('Source code pro'),
 		url(/SourceCodePro-Light.ttf) format('TrueType');
-	font-display: 'swap';
+	font-display: swap;
 }
 /* width */
 ::-webkit-scrollbar {
