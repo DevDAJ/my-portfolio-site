@@ -2,7 +2,6 @@ import { Route, Routes } from 'react-router-dom';
 import About from '../pages/About';
 import Blog from '../pages/Blog';
 import Home from '../pages/Home';
-import Login from '../pages/Login';
 import Portfolio from '../pages/Portfolio';
 import ProtectedRoutes from './ProtectedRoutes';
 import Dashboard from '../pages/dashboard/Dashboard';

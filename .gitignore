@@ -25,6 +25,3 @@ dist-ssr
 ngrok.exe
 .env
 .firebaserc
-firebase.json
-firebase.indexes.json
-firebase.rules
