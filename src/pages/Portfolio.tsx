@@ -38,15 +38,15 @@ function Portfolio() {
 						</h2>
 						<p className='text-gray-300 text-xl'>{project['type']}</p>
 						<p className='text-gray-400'>{project['description']}</p>
-						<div className='flex flex-wrap justify-between'>
-							<div className='flex gap-2 flex-wrap'>
+						<div className='flex flex-wrap justify-between items-center'>
+							<div className='flex gap-2 flex-wrap my-3'>
 								{project['technologies'].map((tech: string) => (
 									<div
 										key={tech}
 										className='border-2 rounded-md border-gray-700 px-3 text-sm'>{`${tech}`}</div>
 								))}
 							</div>
-							<div className='flex gap-2 p-2'>
+							<div className='flex gap-2 '>
 								{project['url'] ? (
 									<a href={project['url']}>
 										<Icon className='text-2xl' icon='material-symbols:link' />

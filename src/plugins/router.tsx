@@ -8,6 +8,7 @@ import Dashboard from '../pages/dashboard/Dashboard';
 import DashboardBlog from '../pages/dashboard/DashboardBlog';
 import DashboardPortfolio from '../pages/dashboard/DashboardPortfolio';
 import DashboardSkills from '../pages/dashboard/DashboardSkills';
+import Post from '../pages/Post';
 
 function MainRouter() {
 	return (
@@ -16,6 +17,7 @@ function MainRouter() {
 				<Route path='/' element={<Home />} />
 				<Route path='about' element={<About />} />
 				<Route path='blog' element={<Blog />} />
+				<Route path='blog/:slug' element={<Post />} />
 				<Route path='portfolio' element={<Portfolio />} />
 				<Route element={<ProtectedRoutes />}>
 					<Route path='dashboard' element={<Dashboard />} />
