@@ -27,7 +27,7 @@ const About: FC = ({}) => {
 				</h1>
 				<iframe
 					title='resume'
-					src='http://docs.google.com/gview?url=https://devdaj.tech/resume.pdf&embedded=true'
+					src='https://docs.google.com/gview?url=https://devdaj.tech/resume.pdf&embedded=true'
 					width='auto'
 					height='auto'
 					className='mt-4'
