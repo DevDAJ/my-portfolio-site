@@ -1,5 +1,6 @@
 import { FC, useEffect, useState } from 'react';
-
+import { db } from '../plugins/firebase';
+import { collection, getDocs } from 'firebase/firestore';
 const About: FC = ({}) => {
 	return (
 		<div className=' flex flex-col px-7'>
@@ -41,27 +42,21 @@ export default About;
 function Skills() {
 	const [skills, setSkill] = useState<any[]>([]);
 	const [loading, setLoading] = useState(true);
+
+	const fetchPost = async () => {
+		await getDocs(collection(db, 'skills')).then((snapshot) => {
+			const data = snapshot.docs.map((doc) => ({
+				id: doc.id,
+				...doc.data(),
+			}));
+			setSkill(data);
+			setLoading(false);
+		});
+	};
 	useEffect(() => {
-		fetch(
-			`https://ntdqhebsazcdgncewudr.supabase.co/rest/v1/Technologies?select=*`,
-			{
-				method: 'GET',
-				headers: new Headers({
-					Authorisation: `Bearer ${import.meta.env.VITE_API_KEY}`,
-					apiKey: `${import.meta.env.VITE_API_KEY}`,
-				}),
-			}
-		)
-			.then((response) => response.json())
-			.then((data) => {
-				setSkill(data);
-				setLoading(false);
-			})
-			.catch((err) => {
-				console.log(err.message);
-			});
+		fetchPost();
 	}, []);
-	//  API CALL TO SUPABASE TO GET SKILLS DATA
+
 	const Technologies = skills.map((skill) => (
 		<div key={skill.id} className='flex flex-col justify-center items-center'>
 			<img
