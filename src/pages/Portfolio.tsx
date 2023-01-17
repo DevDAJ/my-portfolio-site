@@ -32,21 +32,21 @@ function Portfolio() {
 						src={project['imgURL']}
 						width='300'
 						className='aspect-square object-contain'></img>
-					<div className=''>
+					<div className='px-3'>
 						<h2 className='text-3xl'>
 							<strong>{project['name']}</strong>
 						</h2>
 						<p className='text-gray-300 text-xl'>{project['type']}</p>
 						<p className='text-gray-400'>{project['description']}</p>
-						<div className='flex justify-between'>
-							<div className='flex gap-2'>
+						<div className='flex flex-wrap justify-between'>
+							<div className='flex gap-2 flex-wrap'>
 								{project['technologies'].map((tech: string) => (
 									<div
 										key={tech}
 										className='border-2 rounded-md border-gray-700 px-3 text-sm'>{`${tech}`}</div>
 								))}
 							</div>
-							<div className='flex gap-2'>
+							<div className='flex gap-2 p-2'>
 								{project['url'] ? (
 									<a href={project['url']}>
 										<Icon className='text-2xl' icon='material-symbols:link' />
