@@ -2,7 +2,7 @@ import { PropsWithChildren } from 'react';
 import { Link } from 'react-router-dom';
 function Navbar() {
 	return (
-		<nav className='flex flex-row justify-center md:justify-between md:px-8 py-4 sticky top-0 left-0 z-50 mix-blend-difference'>
+		<nav className='flex flex-row justify-center md:justify-between md:px-8 py-4 sticky top-0 left-0 z-50 mix-blend-difference backdrop-blur-sm'>
 			<NavLogo />
 			<NavItems>
 				<Link to='/'>Home</Link>

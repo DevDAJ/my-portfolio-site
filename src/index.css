@@ -59,16 +59,16 @@ iframe {
 	@apply my-9 md:text-3xl text-xl;
 }
 .content > h1 {
-	@apply md:text-6xl text-4xl font-bold after:content-[''] after:block after:w-20 after:h-1 after:bg-blue-400 after:mt-4;
+	@apply md:text-6xl text-4xl font-bold after:content-[''] after:block after:w-auto after:h-1 after:bg-red-600 after:mt-4;
 }
 .content > p > a {
 	@apply text-blue-400;
 }
 .content > h2 {
-	@apply md:text-5xl text-3xl font-bold after:content-[''] after:block after:w-20 after:h-1 after:bg-blue-400 after:mt-4;
+	@apply md:text-5xl text-3xl font-bold after:content-[''] after:block after:w-auto after:h-1 after:bg-red-400 after:mt-4;
 }
 .content > h3 {
-	@apply md:text-3xl	text-2xl font-bold after:content-[''] after:block after:w-20 after:h-1 after:bg-blue-400 after:mt-4;
+	@apply md:text-3xl	text-2xl font-bold after:content-[''] after:block after:w-auto after:h-1 after:bg-red-200 after:mt-4;
 }
 
 .content > ol {
