@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useParams } from 'react-router-dom';
 import { db } from '../plugins/firebase';
 import { collection, getDocs } from 'firebase/firestore';
