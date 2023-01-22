@@ -1,21 +1,13 @@
 import MainRouter from './plugins/router';
-import authState from './context/authState';
-import usePersistState from './hooks/userPersistState';
-import Default from './layouts/default';
-import Protected from './layouts/Protected';
 import Footer from './components/Footer';
+import Navbar from './components/Navbar';
 function App() {
-	const [authenticated, setAuthenticated] = usePersistState(
-		'authenticated',
-		false
-	);
-
 	return (
-		<authState.Provider value={{ authenticated, setAuthenticated }}>
-			{authenticated ? <Protected /> : <Default />}
+		<>
+			<Navbar />
 			<MainRouter />
 			<Footer />
-		</authState.Provider>
+		</>
 	);
 }
 

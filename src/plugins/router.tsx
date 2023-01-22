@@ -3,11 +3,6 @@ import About from '../pages/About';
 import Blog from '../pages/Blog';
 import Home from '../pages/Home';
 import Portfolio from '../pages/Portfolio';
-import ProtectedRoutes from './ProtectedRoutes';
-import Dashboard from '../pages/dashboard/Dashboard';
-import DashboardBlog from '../pages/dashboard/DashboardBlog';
-import DashboardPortfolio from '../pages/dashboard/DashboardPortfolio';
-import DashboardSkills from '../pages/dashboard/DashboardSkills';
 import Post from '../pages/Post';
 
 function MainRouter() {
@@ -19,12 +14,6 @@ function MainRouter() {
 				<Route path='blog' element={<Blog />} />
 				<Route path='blog/:slug' element={<Post />} />
 				<Route path='portfolio' element={<Portfolio />} />
-				<Route element={<ProtectedRoutes />}>
-					<Route path='dashboard' element={<Dashboard />} />
-					<Route path='dashboard/blog' element={<DashboardBlog />} />
-					<Route path='dashboard/portfolio' element={<DashboardPortfolio />} />
-					<Route path='dashboard/skills' element={<DashboardSkills />} />
-				</Route>
 				<Route path='*' element={<h1>404</h1>} />
 			</Routes>
 		</>
