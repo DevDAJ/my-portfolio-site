@@ -9,14 +9,18 @@ function Home() {
 		show: {
 			opacity: 1,
 			transition: {
-				delayChildren: 0.5,
+				delayChildren: 2,
 			},
 		},
 	};
 
 	return (
 		<>
-			<main className='px-7  flex flex-wrap hero text-clip md:text-clip'>
+			<motion.main
+				className='px-7  flex flex-wrap hero text-clip md:text-clip'
+				variants={container}
+				initial='hidden'
+				animate='show'>
 				<div className='py-24 h-[calc(100vh-65px-80px)] mix-blend-difference'>
 					<motion.h1
 						className='text-4xl md:text-6xl'
@@ -41,7 +45,7 @@ function Home() {
 						<Skills />
 					</motion.div>
 				</div>
-			</main>
+			</motion.main>
 		</>
 	);
 }
@@ -69,7 +73,7 @@ function Skills() {
 			key={skill.id}
 			className='flex w p-2 border rounded-2xl my-1 mr-1 items-center'>
 			<img
-				width={40}
+				width={20}
 				height={'auto'}
 				alt={`${skill['name']} icon`}
 				className='aspect-square object-contain'

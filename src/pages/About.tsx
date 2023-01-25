@@ -1,106 +1,114 @@
-import { FC, useEffect, useState } from 'react';
-import { db } from '../plugins/firebase';
-import { collection, getDocs } from 'firebase/firestore';
+import { FC } from 'react';
+import {
+	VerticalTimeline,
+	VerticalTimelineElement,
+} from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
 const About: FC = ({}) => {
 	return (
-		<div className=' flex flex-col px-7'>
-			<main className='py-32'>
-				<h1 className='text-3xl'>
-					<strong>More about me....</strong>
-				</h1>
-				<p className='w-60 md:w-96 mt-4'>
-					Hello, my name is Danial Aiman Jamil and I have a deep love towards
-					creating new things.
-				</p>
-			</main>
-			<section className='flex flex-col items-center'>
-				<h1 className='text-3xl mb-4'>
-					<strong>Skills</strong>
-				</h1>
-				<div className='flex gap-32 flex-wrap justify-center'>
-					<Skills />
-				</div>
-			</section>
-			<section className='mt-10 flex flex-col items-center'>
-				<h1 className='text-3xl'>
-					<strong>My resume</strong>
-				</h1>
-				<iframe
-					title='resume'
-					src='https://docs.google.com/gview?url=https://devdaj.tech/resume.pdf&embedded=true'
-					width='auto'
-					height='auto'
-					className='mt-4'
-					allow='autoplay'></iframe>
-			</section>
-		</div>
+		<>
+			<h1 className='mx-auto text-7xl mb-4'>My journey</h1>
+			<VerticalTimeline>
+				<VerticalTimelineElement
+					className='vertical-timeline-element--work'
+					contentStyle={{ background: 'transparent', color: '#fff' }}
+					contentArrowStyle={{ borderRight: '7px solid gray' }}
+					date='2012 - 2014'
+					iconStyle={{ background: 'white', color: '#fff' }}>
+					<h3 className='vertical-timeline-element-title text-xl'>
+						<strong>Start to programming</strong>
+					</h3>
+					<p>
+						When I was 11, I was interested in creating a unique Minecraft
+						server. Due to that I started learning Java programming to make
+						plugins for Bukkit.
+						<br />
+						<br />
+						The server was a failure but the effort was worth it, I managed to
+						gain a great connections of people. I also learned how to use Linux
+						and how to setup a VPS.
+					</p>
+				</VerticalTimelineElement>
+				<VerticalTimelineElement
+					className='vertical-timeline-element--work'
+					contentStyle={{ background: 'transparent', color: '#fff' }}
+					contentArrowStyle={{ borderRight: '7px solid gray' }}
+					date='2015 - 2018'
+					iconStyle={{ background: 'white', color: '#fff' }}>
+					<h3 className='vertical-timeline-element-title text-xl'>
+						<strong>Halt due to school</strong>
+					</h3>
+					<p>
+						My programming journey halted due to highschool. I was in a boarding
+						school and I had to focus on my studies. I was still interested in
+						programming but I didn't have the time and device to do it.
+						<br />
+						<br />I did however joined a programming club in my school where I
+						learned how to use Arduino, C++ and Python. I also managed to learn
+						some basic HTML, CSS and PHP due to learning Laravel.
+					</p>
+				</VerticalTimelineElement>
+				<VerticalTimelineElement
+					className='vertical-timeline-element--work'
+					contentStyle={{ background: 'transparent', color: '#fff' }}
+					contentArrowStyle={{ borderRight: '7px solid gray' }}
+					date='2019 - 2020'
+					iconStyle={{ background: 'white', color: '#fff' }}>
+					<h3 className='vertical-timeline-element-title text-xl'>
+						<strong>Starting to learn more programming languages</strong>
+					</h3>
+					<p>
+						After I graduated from highschool, I started to learn more
+						programming languages. I started to learn JavaScript, Dart and
+						Rustlang. I was looking at how to make mobile apps and websites.
+						<br />
+						<br />
+						Rust came to me when I was looking for a language that is fast and
+						safe to use. I was also looking for a language that is easy to
+						learn. I found Rustlang and I was amazed by how easy it is to learn
+						and how fast it is.
+						<br />
+						<br />I also started to learn how to use React and Flutter. As much
+						as I like Rustlang, I still prefer to use React for web development.
+						<br />
+						<br />I had some classes in college on Computer Science and I
+						learned about data structures and algorithms. I also learned how to
+						use Java and C.
+					</p>
+				</VerticalTimelineElement>
+				<VerticalTimelineElement
+					className='vertical-timeline-element--work'
+					contentStyle={{ background: 'transparent', color: '#fff' }}
+					contentArrowStyle={{ borderRight: '7px solid gray' }}
+					date='2022 - 2023'
+					iconStyle={{
+						background: 'white',
+						color: '#fff',
+					}}>
+					<h3 className='vertical-timeline-element-title text-xl'>
+						<strong>
+							Serious pursuit toward becoming a Software Developer
+						</strong>
+					</h3>
+					<p>
+						I joined Google Developer Student Club in my university where they
+						share any CS related events. I joined a few hackathons and I learned
+						a lot from them.
+						<br />
+						<br />
+						By November 2022, I got my first podium in a hackathon. I was amazed
+						by how much I learned in just a few months. I also learned a few
+						other frameworks such as Vue and Svelte.
+						<br />
+						<br />I took CS50 from edX . It was a great introduction to Computer
+						Science. Even though I already knew a lot of the topics, I still
+						learned a lot from it. The most important thing I learned from it is
+						that I should always learn new things.
+					</p>
+				</VerticalTimelineElement>
+			</VerticalTimeline>
+		</>
 	);
 };
 
 export default About;
-
-function Skills() {
-	const [skills, setSkill] = useState<any[]>([]);
-	const [loading, setLoading] = useState(true);
-
-	const fetchPost = async () => {
-		await getDocs(collection(db, 'skills')).then((snapshot) => {
-			const data = snapshot.docs.map((doc) => ({
-				id: doc.id,
-				...doc.data(),
-			}));
-			setSkill(data);
-			setLoading(false);
-		});
-	};
-	useEffect(() => {
-		fetchPost();
-	}, []);
-
-	const Technologies = skills.map((skill) => (
-		<div key={skill.id} className='flex flex-col justify-center items-center'>
-			<img
-				width={100}
-				height={'auto'}
-				alt={`${skill['name']} icon`}
-				className='m-auto aspect-square object-contain'
-				src={skill['icon']}></img>
-			<span>{skill['name']}</span>
-		</div>
-	));
-	return <>{loading ? <LoadingSVG /> : <>{Technologies}</>}</>;
-}
-
-// Create an aniamting loading SVG
-function LoadingSVG() {
-	return (
-		<div className='flex flex-col justify-center items-center'>
-			<svg
-				width='100'
-				height='100'
-				viewBox='0 0 100 100'
-				preserveAspectRatio='xMidYMid'
-				className='lds-rolling'>
-				<circle
-					cx='50'
-					cy='50'
-					fill='none'
-					stroke='#FFF'
-					strokeWidth='10'
-					r='35'
-					strokeDasharray='164.93361431346415 56.97787143782138'
-					transform='rotate(0 50 50)'>
-					<animateTransform
-						attributeName='transform'
-						type='rotate'
-						calcMode='linear'
-						values='0 50 50;360 50 50'
-						keyTimes='0;1'
-						dur='1s'
-						begin='0s'
-						repeatCount='indefinite'></animateTransform>
-				</circle>
-			</svg>
-		</div>
-	);
-}
