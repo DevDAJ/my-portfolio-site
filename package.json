@@ -17,10 +17,7 @@
 		"react-dom": "^18.2.0",
 		"react-markdown": "^8.0.4",
 		"react-router-dom": "^6.6.2",
-		"react-vertical-timeline-component": "^3.6.0",
-		"redux": "^4.2.0",
-		"remark-toc": "^8.0.1",
-		"store": "^2.0.12"
+		"react-vertical-timeline-component": "^3.6.0"
 	},
 	"devDependencies": {
 		"@iconify/react": "^4.0.1",
