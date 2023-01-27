@@ -35,7 +35,7 @@ body {
 	width: clamp(280px, 100vw, 1270px);
 }
 .hero {
-	background-image: url('/hero-illustration.webp');
+	background-image: url('/hero-illustration.svg');
 	background-repeat: no-repeat;
 	background-position: right;
 	background-size: contain;
