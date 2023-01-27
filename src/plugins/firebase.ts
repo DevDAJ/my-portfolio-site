@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from 'firebase/app';
+import firebase, { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
 import { getFirestore } from 'firebase/firestore';
 // TODO: Add SDKs for Firebase products that you want to use
@@ -7,6 +7,8 @@ import { getFirestore } from 'firebase/firestore';
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+firebase.setLogLevel('silent');
 const firebaseConfig = {
 	apiKey: import.meta.env.VITE_APIKEY,
 	authDomain: import.meta.env.VITE_AUTH_DOMAIN,
