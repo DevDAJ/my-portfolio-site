@@ -73,17 +73,13 @@ const About: FC = ({}) => {
 							{'( While Studying )'}
 						</strong>
 					</h3>
-					<p>
-						<ul className='list-inside'>
-							<li className='list-disc'>
-								Joined Google Developer Student Club
-							</li>
-							<li className='list-disc'>
-								Joined hackathons, got a 3rd place once
-							</li>
-							<li className='list-disc'>Took CS50x</li>
-						</ul>
-					</p>
+					<ul className='list-inside'>
+						<li className='list-disc'>Joined Google Developer Student Club</li>
+						<li className='list-disc'>
+							Joined hackathons, got a 3rd place once
+						</li>
+						<li className='list-disc'>Took CS50x</li>
+					</ul>
 				</VerticalTimelineElement>
 			</VerticalTimeline>
 		</div>
