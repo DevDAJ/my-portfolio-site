@@ -18,7 +18,7 @@ function Home() {
 				}}
 				transition={{ duration: 0.5 }}>
 				<span className='text-2xl md:text-3xl'>Hello there!</span>
-				<h1 className='text-4xl md:text-6xl max-w-[100vw] '>
+				<h1 className='text-4xl md:text-6xl max-w-[700vw] '>
 					I'm{' '}
 					<strong className='text-ascent'>
 						<Typed
