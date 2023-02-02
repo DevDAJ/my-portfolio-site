@@ -20,7 +20,7 @@ function Blog() {
 	}, []);
 
 	return (
-		<div>
+		<div className='mx-12'>
 			{posts.map((post) => (
 				<Link
 					to={`/blog/${post['slug']}`}

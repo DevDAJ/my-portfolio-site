@@ -17,12 +17,14 @@
 		"react-dom": "^18.2.0",
 		"react-markdown": "^8.0.5",
 		"react-router-dom": "^6.8.0",
+		"react-typed": "^1.2.0",
 		"react-vertical-timeline-component": "^3.6.0"
 	},
 	"devDependencies": {
 		"@iconify/react": "^4.0.1",
 		"@types/react": "^18.0.27",
 		"@types/react-dom": "^18.0.10",
+		"@types/react-router-dom": "^5.3.3",
 		"@types/react-vertical-timeline-component": "^3.3.3",
 		"@types/store": "^2.0.2",
 		"@vitejs/plugin-react-swc": "^3.0.1",

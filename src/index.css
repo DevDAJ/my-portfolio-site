@@ -1,9 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 * {
-	font-family: 'Montserrat', sans-serif;
+	font-family: Montserrat, sans-serif;
+	font-weight: 100;
+	@apply scroll-smooth scroll-p-20;
+}
+body {
+	background-image: url('/background.webp');
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: cover;
+	background-attachment: fixed;
+	@apply bg-blend-color-burn;
 }
 /* width */
 ::-webkit-scrollbar {
@@ -24,32 +34,10 @@
 ::-webkit-scrollbar-thumb:hover {
 	background: #555;
 }
-body {
-	background-image: url('/background.webp');
-	background-repeat: no-repeat;
-	background-position: right;
-	background-size: cover;
-	background-attachment: fixed;
-}
-#root {
-	width: clamp(280px, 100vw, 1270px);
-}
-.hero {
-	background-image: url('/hero-illustration.svg');
-	background-repeat: no-repeat;
-	background-position: right;
-	background-size: contain;
-}
-iframe {
-	width: clamp(100px, 100vw, 512px);
-	aspect-ratio: 1/1.5;
+span > span {
+	@apply font-bold drop-shadow-[0px_0px_20px_rgba(125,18,255,1)];
 }
 
-@media only screen and (max-width: 768px) {
-	.hero {
-		background-image: none;
-	}
-}
 .content {
 	@apply flex flex-col items-start text-left px-12;
 }

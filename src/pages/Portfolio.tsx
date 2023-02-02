@@ -22,16 +22,19 @@ function Portfolio() {
 	}, []);
 
 	return (
-		<div>
+		<div className='mx-12'>
 			{projects.map((project) => (
 				<div
 					key={project['id']}
 					className='relative flex flex-wrap md:flex-nowrap flex-row border-y-2 py-3	 rounded-md border-gray-700 justify-center	 items-center gap-2'>
-					<img
-						alt={`${project['name']} image`}
-						src={project['imgURL']}
-						width='300'
-						className='aspect-square object-contain'></img>
+					<div className='w-[600px] aspect-square object-contain'>
+						<img
+							alt={`${project['name']} image`}
+							src={project['imgURL']}
+							width='600'
+							className='w-[600px] aspect-square object-contain'
+						/>
+					</div>
 					<div className='px-3'>
 						<h2 className='text-3xl'>
 							<strong>{project['name']}</strong>
