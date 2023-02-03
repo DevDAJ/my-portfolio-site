@@ -84,8 +84,8 @@ const About: FC = ({}) => {
 				}}
 				transition={{ duration: 0.5 }}>
 				<h1 className='mx-auto text-7xl my-7 text-center'>About me</h1>
-				<article className='flex'>
-					<p className='mx-12 text-xl w-1/2 leading-loose tracking-widest'>
+				<article className='flex flex-wrap'>
+					<p className='md:mx-12 text-xl md:w-1/2 leading-loose tracking-widest'>
 						Hi, I'm <strong>Danial Aiman Jamil</strong>. I'm a self-taught
 						programmer from{' '}
 						<Icon
@@ -176,7 +176,7 @@ const About: FC = ({}) => {
 				</VerticalTimeline>
 			</section>
 			<motion.section
-				className='flex flex-col items-center mx-12'
+				className='flex flex-col items-center md:mx-12'
 				initial={{
 					opacity: 0,
 					y: 100,
