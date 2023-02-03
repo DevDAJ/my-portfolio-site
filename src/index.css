@@ -7,14 +7,6 @@
 	font-weight: 200;
 	@apply scroll-smooth scroll-p-20;
 }
-body {
-	background-image: url('/background.webp');
-	background-repeat: no-repeat;
-	background-position: right;
-	background-size: cover;
-	background-attachment: fixed;
-	@apply bg-blend-color-burn;
-}
 /* width */
 ::-webkit-scrollbar {
 	width: 2px;
