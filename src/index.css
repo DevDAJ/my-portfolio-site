@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 * {
 	font-family: Montserrat, sans-serif;
-	font-weight: 100;
+	font-weight: 200;
 	@apply scroll-smooth scroll-p-20;
 }
 body {

@@ -7,7 +7,7 @@ function Home() {
 	return (
 		<>
 			<motion.main
-				className='px-12 flex flex-col justify-center hero text-clip md:text-clip w-full aspect-video max-h-[50vh] md:max-h-[calc(100vh-20ch)] my-7  '
+				className='px-12 flex flex-col justify-center hero text-clip md:text-clip w-full aspect-video h-[clamp(50vh,_60vh,calc(100vh-20ch))] my-7  '
 				initial={{
 					opacity: 0,
 					y: 100,
@@ -18,7 +18,7 @@ function Home() {
 				}}
 				transition={{ duration: 0.5 }}>
 				<span className='text-2xl md:text-3xl'>Hello there!</span>
-				<h1 className='text-4xl md:text-6xl max-w-[700vw] '>
+				<h1 className='text-4xl md:text-6xl max-w-[700vw] min-h-[8rem]'>
 					I'm{' '}
 					<strong className='text-ascent'>
 						<Typed
@@ -32,7 +32,7 @@ function Home() {
 							loop></Typed>
 					</strong>
 				</h1>
-				<div className='flex flex-wrap md:ml-10 mt-5 text-left text-xs md:text-xl h-10 w-1/2'>
+				<div className='flex flex-wrap md:ml-10 mt-5 text-left text-base md:text-xl h-10 w-[80%]'>
 					<HeroButton text='Learn more' link='about' />
 					<HeroButton text='My works' link='portfolio' />
 					<HeroButton text='Blog' link='blog' />

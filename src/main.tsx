@@ -32,7 +32,11 @@ function Socials() {
 		<div className='reverse gap-3 max-w-[3rem] justify-start px-2 self-end'>
 			{socials.map((social) => (
 				<a key={social['name']} href={social['url']}>
-					<Icon width={'2rem'} icon={`mdi:${social['name']}`} />
+					<Icon
+						aria-label={social['name']}
+						width={'2rem'}
+						icon={`mdi:${social['name']}`}
+					/>
 				</a>
 			))}
 		</div>
