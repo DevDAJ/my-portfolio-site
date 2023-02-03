@@ -114,7 +114,7 @@ const About: FC = ({}) => {
 								height={20}
 								icon='mdi:phone'
 							/>{' '}
-							<a href='tel:+6010165333'>+60 11 1016 5333</a> <br />
+							<a href='tel:+601110165333'>+60 11 1016 5333</a> <br />
 						</div>
 						<div>
 							<Icon
