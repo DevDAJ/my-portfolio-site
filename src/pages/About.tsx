@@ -85,7 +85,7 @@ const About: FC = ({}) => {
 				transition={{ duration: 0.5 }}>
 				<h1 className='mx-auto text-7xl my-7 text-center'>About me</h1>
 				<article className='flex flex-wrap'>
-					<p className='md:mx-12 text-xl md:w-1/2 leading-loose tracking-widest'>
+					<p className='my-8 md:mx-12 text-xl md:w-1/2 leading-loose tracking-widest'>
 						Hi, I'm <strong>Danial Aiman Jamil</strong>. I'm a self-taught
 						programmer from{' '}
 						<Icon
@@ -102,7 +102,7 @@ const About: FC = ({}) => {
 					</p>
 					<div className='text-xl text-left flex flex-col justify-between'>
 						<p>
-							Contact information:{' '}
+							<strong>Contact information: </strong>
 							<span className='text-base inline-block text-gray-500'>
 								{'(Clickable)'}
 							</span>{' '}
