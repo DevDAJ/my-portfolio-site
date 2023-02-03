@@ -44,7 +44,7 @@ const About: FC = ({}) => {
 					apikey:
 						'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFoeGRpeXN4ZHlnY2xjZ3p3d251Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzU0MTY0ODgsImV4cCI6MTk5MDk5MjQ4OH0.xBelqgXTEqgdMOhx-224kJlmNDYg9kXBVy1-iwRooXE',
 					Authorization:
-						'Beare eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFoeGRpeXN4ZHlnY2xjZ3p3d251Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzU0MTY0ODgsImV4cCI6MTk5MDk5MjQ4OH0.xBelqgXTEqgdMOhx-224kJlmNDYg9kXBVy1-iwRooXE',
+						'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFoeGRpeXN4ZHlnY2xjZ3p3d251Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzU0MTY0ODgsImV4cCI6MTk5MDk5MjQ4OH0.xBelqgXTEqgdMOhx-224kJlmNDYg9kXBVy1-iwRooXE',
 				},
 			}
 		)
@@ -60,7 +60,7 @@ const About: FC = ({}) => {
 					apikey:
 						'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFoeGRpeXN4ZHlnY2xjZ3p3d251Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzU0MTY0ODgsImV4cCI6MTk5MDk5MjQ4OH0.xBelqgXTEqgdMOhx-224kJlmNDYg9kXBVy1-iwRooXE',
 					Authorization:
-						'Beare eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFoeGRpeXN4ZHlnY2xjZ3p3d251Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzU0MTY0ODgsImV4cCI6MTk5MDk5MjQ4OH0.xBelqgXTEqgdMOhx-224kJlmNDYg9kXBVy1-iwRooXE',
+						'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFoeGRpeXN4ZHlnY2xjZ3p3d251Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzU0MTY0ODgsImV4cCI6MTk5MDk5MjQ4OH0.xBelqgXTEqgdMOhx-224kJlmNDYg9kXBVy1-iwRooXE',
 				},
 			}
 		)
@@ -83,7 +83,7 @@ const About: FC = ({}) => {
 					x: 0,
 				}}
 				transition={{ duration: 0.5 }}>
-				<h1 className='mx-auto text-7xl my-7 text-center'>About me</h1>
+				<h1 className='mx-auto text-4xl md:text-7xl my-7 text-center'>About me</h1>
 				<article className='flex flex-wrap'>
 					<p className='my-8 md:mx-12 text-xl md:w-1/2 leading-loose tracking-widest'>
 						Hi, I'm <strong>Danial Aiman Jamil</strong>. I'm a self-taught
@@ -147,12 +147,12 @@ const About: FC = ({}) => {
 				</ul>
 			</motion.main>
 			<section className='flex flex-col items-center m-12'>
-				<h2 className='mx-auto text-7xl mb-4'>My journey</h2>
+				<h2 className='mx-auto text-4xl md:text-7xl mb-4'>My journey</h2>
 				<VerticalTimeline>
 					{timeline?.map((item, index) => {
 						return (
 							<VerticalTimelineElement
-								key={index}
+							key={index}
 								className='vertical-timeline-element--work'
 								contentStyle={{ background: 'transparent', color: '#fff' }}
 								contentArrowStyle={{ borderRight: '7px solid gray' }}
@@ -186,7 +186,7 @@ const About: FC = ({}) => {
 					y: 0,
 				}}
 				transition={{ duration: 0.5 }}>
-				<h2 className='mx-auto text-7xl mb-4'>My skills</h2>
+				<h2 className='mx-auto text-4xl md:text-7xl mb-4'>My skills</h2>
 				<div className='flex flex-col items-center'>
 					<motion.div
 						className='flex flex-row flex-wrap justify-center'
