@@ -138,6 +138,16 @@ const About: FC = ({}) => {
 							<br />
 						</div>
 						<div>
+							<Icon className='inline-block mr-2' icon='mdi:twitter' />{' '}
+							<a href='https://twitter.com/DevDAJ'>@DevDAJ</a>
+						</div>
+						<div>
+							<Icon className='inline-block mr-2' icon='mdi:facebook' />{' '}
+							<a href='https://www.facebook.com/danial.aiman.jamil'>
+								Danial Aiman Jamil
+							</a>
+						</div>
+						<div>
 							<Icon className='inline-block mr-2' icon='mdi:github' />{' '}
 							<a href='https://github.com/DevDAJ'>DevDAJ</a>
 						</div>
