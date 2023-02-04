@@ -26,7 +26,7 @@ const About: FC = ({}) => {
 		show: {
 			opacity: 1,
 			transition: {
-				staggerChildren: 0.1,
+				staggerChildren: 0.05,
 			},
 		},
 	};
@@ -83,7 +83,7 @@ const About: FC = ({}) => {
 					x: 0,
 				}}
 				transition={{ duration: 0.5 }}>
-				<h1 className='mx-auto text-4xl md:text-7xl my-7 text-center'>
+				<h1 className='mx-auto text-4xl md:text-7xl my-7 text-center glow font-bold drop-shadow-lg text-ascent'>
 					About me
 				</h1>
 				<article className='flex flex-wrap'>
@@ -159,7 +159,9 @@ const About: FC = ({}) => {
 				</ul>
 			</motion.main>
 			<section className='flex flex-col items-center m-4 md:m-12'>
-				<h2 className='mx-auto text-4xl md:text-7xl mb-4'>My journey</h2>
+				<h2 className='mx-auto text-4xl md:text-7xl mb-4 glow font-bold drop-shadow-lg text-ascent'>
+					My journey
+				</h2>
 				<VerticalTimeline>
 					{timeline?.map((item, index) => {
 						return (
@@ -198,7 +200,9 @@ const About: FC = ({}) => {
 					y: 0,
 				}}
 				transition={{ duration: 0.5 }}>
-				<h2 className='mx-auto text-4xl md:text-7xl mb-4'>My skills</h2>
+				<h2 className='mx-auto text-4xl md:text-7xl mb-4 glow font-bold drop-shadow-lg text-ascent'>
+					My skills
+				</h2>
 				<div className='flex flex-col items-center'>
 					<motion.div
 						className='flex flex-row flex-wrap justify-center'
@@ -210,7 +214,7 @@ const About: FC = ({}) => {
 								<motion.div
 									key={index}
 									variants={listItem}
-									className='flex flex-col items-center m-4 relative after:absolute after:text-transparent after:content-["asa"] after:aspect-square after:bg-[rgba(125,18,255,1)] after:top-4 after:-z-50 after:blur-2xl'>
+									className='flex flex-col items-center m-4 relative after:absolute after:text-transparent after:content-["asa"] after:aspect-square after:bg-[#721adf] after:top-4 after:-z-50 after:blur-xl'>
 									<Icon
 										className='stroke-current '
 										width={70}

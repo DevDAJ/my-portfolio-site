@@ -16,8 +16,8 @@ function Navbar() {
 				<NavLogo />
 				<div
 					className={classNames([
-						'nav-item-container',
-						isActivated ? 'active backdrop' : '',
+						'nav-item-container backdrop',
+						isActivated ? 'active' : '',
 					])}>
 					<div className='md:hidden w-1/5'>
 						<button
