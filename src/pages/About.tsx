@@ -73,7 +73,7 @@ const About: FC = ({}) => {
 	return (
 		<>
 			<motion.main
-				className='mx-4 md:mx-12 py-6'
+				className='mx-4 sm:mx-6 md:mx-12 py-6'
 				initial={{
 					opacity: 0,
 					x: 100,
