@@ -73,7 +73,7 @@ const About: FC = ({}) => {
 	return (
 		<>
 			<motion.main
-				className='mx-12 py-6'
+				className='mx-4 md:mx-12 py-6'
 				initial={{
 					opacity: 0,
 					x: 100,
@@ -148,7 +148,7 @@ const About: FC = ({}) => {
 					<li></li>
 				</ul>
 			</motion.main>
-			<section className='flex flex-col items-center m-12'>
+			<section className='flex flex-col items-center m-4 md:m-12'>
 				<h2 className='mx-auto text-4xl md:text-7xl mb-4'>My journey</h2>
 				<VerticalTimeline>
 					{timeline?.map((item, index) => {
