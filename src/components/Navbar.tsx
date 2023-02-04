@@ -12,7 +12,7 @@ function Navbar() {
 	useEffect(() => {}, [isActivated]);
 	return (
 		<>
-			<nav className='nav md:hidden'>
+			<nav aria-hidden={true} className='nav md:hidden'>
 				<NavLogo />
 				<div
 					className={classNames([
@@ -21,6 +21,8 @@ function Navbar() {
 					])}>
 					<div className='md:hidden w-1/5'>
 						<button
+							role='button'
+							aria-label='Toggle Menu'
 							onClick={toggleMenu}
 							className='mx-2 mr-8 my-4 p-1 rounded-full text-ascent text-2xl'>
 							{isActivated ? (

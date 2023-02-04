@@ -30,12 +30,11 @@ function Socials() {
 	return (
 		<>
 			{socials.map((social) => (
-				<a key={social['name']} href={social['url']}>
-					<Icon
-						aria-label={social['name']}
-						width={'2rem'}
-						icon={`mdi:${social['name']}`}
-					/>
+				<a
+					aria-label={social['name']}
+					key={social['name']}
+					href={social['url']}>
+					<Icon width={'2rem'} icon={`mdi:${social['name']}`} />
 				</a>
 			))}
 		</>
