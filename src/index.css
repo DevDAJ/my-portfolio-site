@@ -50,7 +50,7 @@ span > span {
 }
 
 .content {
-	@apply flex flex-col items-start text-left px-12;
+	@apply flex flex-col items-start text-left px-4 md:px-12;
 }
 .content > * {
 	@apply my-9 md:text-3xl text-xl;
