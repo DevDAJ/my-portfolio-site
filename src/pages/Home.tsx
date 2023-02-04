@@ -46,7 +46,7 @@ export default Home;
 
 function HeroButton({ text, link }: { text: string; link: string }) {
 	return (
-		<Link to={`/${link}`}>
+		<Link aria-label={text} to={`/${link}`}>
 			<button className='p-1 m-1 md:p-2  border-ascent glow border w-fit whitespace-nowrap rounded-md md:m-4 transition-all hover:border-red-400 hover:shadow-red-400 hover:scale-[1.1] bg-main'>
 				{text}
 			</button>
