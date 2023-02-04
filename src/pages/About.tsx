@@ -83,7 +83,9 @@ const About: FC = ({}) => {
 					x: 0,
 				}}
 				transition={{ duration: 0.5 }}>
-				<h1 className='mx-auto text-4xl md:text-7xl my-7 text-center'>About me</h1>
+				<h1 className='mx-auto text-4xl md:text-7xl my-7 text-center'>
+					About me
+				</h1>
 				<article className='flex flex-wrap'>
 					<p className='my-8 md:mx-12 text-xl md:w-1/2 leading-loose tracking-widest'>
 						Hi, I'm <strong>Danial Aiman Jamil</strong>. I'm a self-taught
@@ -152,7 +154,7 @@ const About: FC = ({}) => {
 					{timeline?.map((item, index) => {
 						return (
 							<VerticalTimelineElement
-							key={index}
+								key={index}
 								className='vertical-timeline-element--work'
 								contentStyle={{ background: 'transparent', color: '#fff' }}
 								contentArrowStyle={{ borderRight: '7px solid gray' }}

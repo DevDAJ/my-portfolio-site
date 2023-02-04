@@ -12,7 +12,7 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				main: '#17151C',
+				main: 'rgb(6, 00, 12)',
 				ascent: 'rgb(91, 33, 182)',
 			},
 			fontFamily: {

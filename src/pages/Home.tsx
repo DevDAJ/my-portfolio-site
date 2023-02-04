@@ -7,7 +7,7 @@ function Home() {
 	return (
 		<>
 			<motion.main
-				className='px-12 flex flex-col justify-center hero text-clip md:text-clip w-full aspect-video h-[clamp(50vh,_60vh,calc(100vh-20ch))] my-7  '
+				className='home-main'
 				initial={{
 					opacity: 0,
 					y: 100,
@@ -17,8 +17,8 @@ function Home() {
 					y: 0,
 				}}
 				transition={{ duration: 0.5 }}>
-				<span className='text-2xl md:text-3xl'>Hello there!</span>
-				<h1 className='text-4xl md:text-6xl max-w-[700vw] min-h-[8rem]'>
+				<span className='text-xl md:text-3xl'>Hello there!</span>
+				<h1 className='text-4xl md:text-6xl max-w-[700vw] min-h-[5rem] md:min-h-[8rem]'>
 					I'm{' '}
 					<strong className='text-ascent'>
 						<Typed
@@ -32,7 +32,7 @@ function Home() {
 							loop></Typed>
 					</strong>
 				</h1>
-				<div className='flex flex-wrap md:ml-10 mt-5 text-left text-base md:text-xl h-10 w-[80%]'>
+				<div className='flex justify-center md:justify-start md:ml-10 mt-5 text-left text-base md:text-xl h-10 w-[80%]'>
 					<HeroButton text='Learn more' link='about' />
 					<HeroButton text='My works' link='portfolio' />
 					<HeroButton text='Blog' link='blog' />
@@ -47,7 +47,7 @@ export default Home;
 function HeroButton({ text, link }: { text: string; link: string }) {
 	return (
 		<Link to={`/${link}`}>
-			<button className='p-1 m-1 md:p-2 border-ascent border w-fit whitespace-nowrap rounded-md md:m-4 shadow-[0px_0px_20px_rgba(125,18,255,1)] shadow-ascent transition-all hover:border-red-400 hover:shadow-red-400 hover:scale-[1.1] bg-main'>
+			<button className='p-1 m-1 md:p-2  border-ascent glow border w-fit whitespace-nowrap rounded-md md:m-4 transition-all hover:border-red-400 hover:shadow-red-400 hover:scale-[1.1] bg-main'>
 				{text}
 			</button>
 		</Link>

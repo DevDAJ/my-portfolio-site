@@ -7,27 +7,46 @@
 	font-weight: 200;
 	@apply scroll-smooth scroll-p-20;
 }
-/* width */
+/* Scrollbar */
 ::-webkit-scrollbar {
 	width: 2px;
 }
-
-/* Track */
 ::-webkit-scrollbar-track {
 	background: #f1f1f1;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
 	background: #888;
 }
-
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
 	background: #555;
 }
+
+/* Home */
+.home-main {
+	@apply p-2 text-center flex flex-col w-full aspect-video h-[clamp(50vh,_60vh,calc(100vh-20ch))] my-7 items-center 
+	md:px-12 md:text-left md:justify-center md:items-start;
+}
+.glow {
+	@apply drop-shadow-[0px_0px_20px_rgba(125,18,255,1)];
+}
+.nav {
+	@apply flex flex-row justify-between px-8 py-4 sticky 
+	top-0 left-0 z-50 w-screen bg-main shadow-sm shadow-black;
+}
+.nav-item-container {
+	@apply flex flex-row items-start gap-5 text-2xl h-screen
+	md:h-fit absolute md:static w-screen md:w-auto top-0 left-0 z-50 translate-x-[80vw] [&.active]:translate-x-0 md:translate-x-0 transition-all;
+}
+.nav-item-element {
+	@apply after:content-[""] after:block after:w-auto after:h-[1px] hover:after:bg-blue-600 [&.active]:after:bg-violet-700;
+}
+.backdrop {
+	@apply bg-[rgba(0,0,0,0.9)];
+}
+/* Typed */
 span > span {
-	@apply font-bold drop-shadow-[0px_0px_20px_rgba(125,18,255,1)];
+	@apply font-bold glow;
 }
 
 .content {

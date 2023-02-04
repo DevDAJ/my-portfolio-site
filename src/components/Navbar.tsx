@@ -1,18 +1,57 @@
+// eslint-disable @typescript-eslint/no-unused-expressions
+import { Icon } from '@iconify/react';
 import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
-
+import classNames from '../plugins/classNames';
+import { useState, useEffect } from 'react';
 function Navbar() {
+	const [isActivated, setIsActivated] = useState(false);
+	function toggleMenu() {
+		setIsActivated(!isActivated);
+	}
+	useEffect(() => {}, [isActivated]);
 	return (
-		<nav className='flex flex-row justify-center md:justify-between px-8 py-4 sticky top-0 left-0 z-50 mix-blend-difference backdrop-blur-xl w-screen'>
-			<NavLogo />
-			<NavItems links={['Home', 'About', 'Portfolio', 'Blog']}></NavItems>
-		</nav>
+		<>
+			<nav className='nav md:hidden'>
+				<NavLogo />
+				<div
+					className={classNames([
+						'nav-item-container',
+						isActivated ? 'active backdrop' : '',
+					])}>
+					<div className='md:hidden w-1/5'>
+						<button
+							onClick={toggleMenu}
+							className='mx-2 mr-8 my-4 p-1 rounded-full text-ascent text-2xl'>
+							{isActivated ? (
+								<Icon icon='mdi:close' />
+							) : (
+								<Icon icon='mdi:menu' />
+							)}
+						</button>
+					</div>
+					<div className='md:hidden flex flex-col text-left my-24 gap-5'>
+						<NavItems
+							links={['Home', 'About', 'Portfolio', 'Blog']}
+							close={() => toggleMenu()}></NavItems>
+					</div>
+				</div>
+			</nav>
+			<nav
+				className='hidden md:flex flex-row justify-between px-8 py-4 sticky 
+	top-0 left-0 z-50 w-screen bg-main shadow-sm shadow-black'>
+				<NavLogo />
+				<div className='nav-item-container'>
+					<NavItems links={['Home', 'About', 'Portfolio', 'Blog']}></NavItems>
+				</div>
+			</nav>
+		</>
 	);
 }
 
 function NavLogo() {
 	return (
-		<div className='text-2xl hidden md:flex'>
+		<div className='text-2xl'>
 			<Link to='/'>
 				<span>{'<DAJ/>'}</span>
 			</Link>
@@ -20,27 +59,29 @@ function NavLogo() {
 	);
 }
 
-function NavItems({ links }: { links?: string[] }) {
+function NavItems({ links, close }: { links?: string[]; close?: () => void }) {
 	return (
-		<div className='flex flex-row flex-wrap justify-center gap-5 text-2xl'>
+		<>
 			{links?.map((link) =>
 				link.toLowerCase() === 'home' ? (
 					<NavLink
 						key={link}
 						to={`/`}
-						className='after:content-[""] after:block after:w-auto after:h-[1px] hover:after:bg-blue-600 [&.active]:after:bg-violet-700'>
+						onClick={close}
+						className='nav-item-element'>
 						{link}
 					</NavLink>
 				) : (
 					<NavLink
 						key={link}
 						to={`/${link.toLowerCase()}`}
-						className='after:content-[""] after:block after:w-auto after:h-[1px] hover:after:bg-blue-600 [&.active]:after:bg-violet-700'>
+						onClick={close}
+						className='nav-item-element'>
 						{link}
 					</NavLink>
 				)
 			)}
-		</div>
+		</>
 	);
 }
 export default Navbar;
