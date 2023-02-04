@@ -102,7 +102,7 @@ const About: FC = ({}) => {
 						<strong>UI/UX design</strong>. I'm currently working on{' '}
 						<strong>my portfolio and personal blog</strong>.
 					</p>
-					<div className='text-xl text-left flex flex-col justify-around'>
+					<div className='text-xl text-left flex flex-col justify-around md:my-8'>
 						<p>
 							<strong>Contact information: </strong>
 							<span className='text-base inline-block text-gray-500'>
