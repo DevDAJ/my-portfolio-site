@@ -1,24 +1,14 @@
-import { db } from '../plugins/firebase';
-import { collection, getDocs } from 'firebase/firestore';
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
+const posts = [
+	{
+		id: 1,
+		title: 'Hello World',
+		slug: 'hello-world',
+		contentText:
+			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+	},
+];
 function Blog() {
-	const [posts, setPosts] = useState<any[]>([]);
-
-	const fetchPost = async () => {
-		await getDocs(collection(db, 'posts')).then((snapshot) => {
-			const data = snapshot.docs.map((doc) => ({
-				id: doc.id,
-				...doc.data(),
-			}));
-			setPosts(data);
-		});
-	};
-	useEffect(() => {
-		fetchPost();
-	}, []);
-
 	return (
 		<div className='mx-12'>
 			{posts.map((post) => (

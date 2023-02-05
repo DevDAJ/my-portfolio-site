@@ -83,11 +83,11 @@ const About: FC = ({}) => {
 					x: 0,
 				}}
 				transition={{ duration: 0.5 }}>
-				<h1 className='mx-auto text-4xl md:text-7xl my-7 text-center glow font-bold drop-shadow-lg text-ascent'>
+				<h1 className='mx-auto text-3xl md:text-6xl my-7 text-center glow font-bold drop-shadow-lg text-ascent'>
 					About me
 				</h1>
 				<article className='flex flex-wrap'>
-					<p className='my-8 text-xl leading-snug tracking-tight lg:w-3/5 sm:leading-relaxed sm:tracking-wider lg:leading-loose lg:tracking-widest'>
+					<p className='my-8 text-lg leading-snug tracking-tight lg:w-3/5 sm:leading-relaxed sm:tracking-wider lg:leading-loose lg:tracking-widest'>
 						Hi, I'm <strong>Danial Aiman Jamil</strong>. I'm a self-taught
 						programmer from{' '}
 						<Icon
@@ -102,7 +102,7 @@ const About: FC = ({}) => {
 						<strong>UI/UX design</strong>. I'm currently working on{' '}
 						<strong>my portfolio and personal blog</strong>.
 					</p>
-					<div className='text-xl text-left flex flex-col justify-around md:my-8'>
+					<div className='text-lg text-left flex flex-col justify-around md:my-8'>
 						<p>
 							<strong>Contact information: </strong>
 							<span className='text-base inline-block text-gray-500'>
@@ -159,7 +159,7 @@ const About: FC = ({}) => {
 				</ul>
 			</motion.main>
 			<section className='flex flex-col items-center m-4 md:m-12'>
-				<h2 className='mx-auto text-4xl md:text-7xl mb-4 glow font-bold drop-shadow-lg text-ascent'>
+				<h2 className='mx-auto text-3xl md:text-6xl mb-4 glow font-bold drop-shadow-lg text-ascent'>
 					My journey
 				</h2>
 				<VerticalTimeline>
@@ -200,7 +200,7 @@ const About: FC = ({}) => {
 					y: 0,
 				}}
 				transition={{ duration: 0.5 }}>
-				<h2 className='mx-auto text-4xl md:text-7xl mb-4 glow font-bold drop-shadow-lg text-ascent'>
+				<h2 className='mx-auto text-3xl md:text-6xl mb-4 glow font-bold drop-shadow-lg text-ascent'>
 					My skills
 				</h2>
 				<div className='flex flex-col items-center'>

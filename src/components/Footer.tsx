@@ -18,14 +18,15 @@ export default Footer;
 
 function Socials() {
 	const socials = [
-		{ name: 'github', url: 'https://github.com/DevDAJ' },
+		{ name: 'whatsapp', url: 'https://wa.me/+601110165333/' },
+		{ name: 'email', url: 'mailto://danial.aiman.j@gmail.com' },
 		{
 			name: 'linkedin',
 			url: 'https://www.linkedin.com/in/danial-aiman-jamil-a71727155/',
 		},
 		{ name: 'twitter', url: 'https://twitter.com/D_AimanJ' },
 		{ name: 'facebook', url: 'https://www.facebook.com/danial.a.jamil' },
-		{ name: 'whatsapp', url: 'https://wa.me/+601110165333/' },
+		{ name: 'github', url: 'https://github.com/DevDAJ' },
 	];
 	return (
 		<>

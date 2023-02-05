@@ -1,73 +1,118 @@
-import { db } from '../plugins/firebase';
-import { collection, getDocs } from 'firebase/firestore';
-import { useEffect, useState } from 'react';
+import classNames from '../plugins/classNames';
+import { motion } from 'framer-motion';
 import { Icon } from '@iconify/react';
+import { useState, useEffect } from 'react';
 
-function Portfolio() {
-	const [projects, setProjects] = useState<any[]>([]);
-	const [loading, setLoading] = useState(true);
+type Project = {
+	name: string;
+	description: string;
+	tech: Array<string>;
+	image: string;
+	link: string;
+	code: string;
+};
 
-	const fetchPost = async () => {
-		await getDocs(collection(db, 'projects')).then((snapshot) => {
-			const data = snapshot.docs.map((doc) => ({
-				id: doc.id,
-				...doc.data(),
-			}));
-			setProjects(data);
-			setLoading(false);
-		});
-	};
-	useEffect(() => {
-		fetchPost();
-	}, []);
-
-	return (
-		<div className='mx-12'>
-			{projects.map((project) => (
-				<div
-					key={project['id']}
-					className='relative flex flex-wrap md:flex-nowrap flex-row border-y-2 py-3	 rounded-md border-gray-700 justify-center	 items-center gap-2'>
-					<div className='w-[600px] aspect-square object-contain'>
-						<img
-							alt={`${project['name']} image`}
-							src={project['imgURL']}
-							width='600'
-							className='w-[600px] aspect-square object-contain'
-						/>
-					</div>
-					<div className='px-3'>
-						<h2 className='text-3xl'>
-							<strong>{project['name']}</strong>
-						</h2>
-						<p className='text-gray-300 text-xl'>{project['type']}</p>
-						<p className='text-gray-400'>{project['description']}</p>
-						<div className='flex flex-wrap justify-between items-center'>
-							<div className='flex gap-2 flex-wrap my-3'>
-								{project['technologies'].map((tech: string) => (
-									<div
-										key={tech}
-										className='border-2 rounded-md border-gray-700 px-3 text-sm'>{`${tech}`}</div>
-								))}
-							</div>
-							<div className='flex gap-2 '>
-								{project['url'] ? (
-									<a href={project['url']}>
-										<Icon className='text-2xl' icon='material-symbols:link' />
-									</a>
-								) : null}
-
-								{project['repo'] ? (
-									<a href={project['repo']}>
-										<Icon className='text-2xl' icon='mdi:github' />
-									</a>
-								) : null}
-							</div>
-						</div>
-					</div>
-				</div>
-			))}
-		</div>
-	);
+export default function Portfolio() {
+	return <></>;
 }
+// export default function Portfolio() {
+// 	const [projects, setProjects] = useState([]);
+// 	useEffect(() => {
+// 		fetch(
+// 			'https://qhxdiysxdygclcgzwwnu.supabase.co/rest/v1/projects?select=name%2Cdescription%2Cimage%2Clink%2Ccode',
+// 			{
+// 				method: 'GET',
+// 				headers: {
+// 					apikey: '',
+// 				},
+// 			}
+// 		)
+// 			.then((res) => res.json())
+// 			.then((data) => {
+// 				setProjects(data);
+// 			});
+// 	}, []);
 
-export default Portfolio;
+// 	const container = {
+// 		hidden: { opacity: 0 },
+// 		show: {
+// 			opacity: 1,
+// 			transition: {
+// 				staggerChildren: 0.05,
+// 			},
+// 		},
+// 	};
+
+// 	const listItem = {
+// 		hidden: { opacity: 0 },
+// 		show: { opacity: 1 },
+// 	};
+// 	return (
+// 		<div className='relative'>
+// 			{projects.map((project, index) => {
+// 				return (
+// 					<div
+// 						key={index}
+// 						className={classNames([
+// 							`flex flex-col lg:flex-row justify-end min-h-[calc(100vh-4rem)] md:max-h-[calc(100vh-4rem)] lg:aspect-video w-screen [background-image:_url(${project.image})] bg-cover bg-fixed bg-no-repeat bg-left`,
+// 							index % 2 == 0
+// 								? 'lg:justify-start text-left'
+// 								: 'lg:justify-end text-right',
+// 							,
+// 						])}>
+// 						<motion.div
+// 							variants={container}
+// 							initial='hidden'
+// 							whileInView='show'
+// 							className='flex flex-col items-center gap-2 p-12 bg-main lg:min-h-[inherit] justify-center lg:w-1/3'>
+// 							<h2 className='text-4xl glow font-bold text-ascent whitespace-nowrap'>
+// 								{project.title}
+// 							</h2>
+// 							<p className='text-sm'>{project.description}</p>
+// 							<div
+// 								className={classNames([
+// 									'flex flex-row md:gap-2',
+// 									index % 2 == 0 ? 'justify-start' : 'justify-end',
+// 								])}>
+// 								{project.tech.map((tech, index) => {
+// 									return (
+// 										<motion.div
+// 											key={index}
+// 											variants={listItem}
+// 											className='flex flex-col items-center m-2 relative'>
+// 											<Icon
+// 												className='stroke-current '
+// 												width={30}
+// 												height={30}
+// 												color='#fff'
+// 												icon={`logos:${tech.toLowerCase()}`}
+// 											/>
+// 										</motion.div>
+// 									);
+// 								})}
+// 							</div>
+// 							<div className='flex gap-5 text-2xl'>
+// 								{project.link && (
+// 									<motion.button
+// 										whileHover={{ scale: 1.1 }}
+// 										whileTap={{ scale: 0.9 }}
+// 										className='bg-ascent text-white p-2 aspect-square rounded-md glow'>
+// 										<Icon icon='mdi:link-variant' />
+// 									</motion.button>
+// 								)}
+// 								{project.code && (
+// 									<motion.button
+// 										whileHover={{ scale: 1.1 }}
+// 										whileTap={{ scale: 0.9 }}
+// 										className='bg-ascent text-white p-2 rounded-md glow'>
+// 										<Icon icon='mdi:github' />
+// 									</motion.button>
+// 								)}
+// 							</div>
+// 						</motion.div>
+// 					</div>
+// 				);
+// 			})}
+// 		</div>
+// 	);
+// }
