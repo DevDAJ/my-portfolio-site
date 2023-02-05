@@ -13,6 +13,7 @@ type Skill = {
 };
 
 type Timeline = {
+	id: number;
 	title: string;
 	date: string;
 	description: Array<string>;
@@ -53,7 +54,7 @@ const About: FC = ({}) => {
 				setSkills(data);
 			});
 		fetch(
-			'https://qhxdiysxdygclcgzwwnu.supabase.co/rest/v1/timeline?select=title,date,description',
+			'https://qhxdiysxdygclcgzwwnu.supabase.co/rest/v1/timeline?select=id,title,date,description',
 			{
 				method: 'GET',
 				headers: {
@@ -66,7 +67,10 @@ const About: FC = ({}) => {
 		)
 			.then((res) => res.json())
 			.then((data) => {
-				setTimeline(data);
+				const sorteddata = data.sort((a: Timeline, b: Timeline) => {
+					return a.id - b.id;
+				});
+				setTimeline(sorteddata);
 			});
 	}, []);
 
@@ -217,14 +221,12 @@ const About: FC = ({}) => {
 									className='flex flex-col items-center m-4 relative after:absolute after:text-transparent after:content-["asa"] after:aspect-square after:bg-[#721adf] after:top-4 after:-z-50 after:blur-xl'>
 									<Icon
 										className='stroke-current '
-										width={70}
-										height={70}
+										width={50}
+										height={50}
 										color='#fff'
 										icon={`logos:${skill['icon']}`}
 									/>
-									<p className='text-xl first-letter:uppercase'>
-										{skill['name']}
-									</p>
+									<p className=' first-letter:uppercase'>{skill['name']}</p>
 								</motion.div>
 							);
 						})}
