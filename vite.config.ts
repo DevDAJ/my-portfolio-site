@@ -12,7 +12,6 @@ export default defineConfig({
 				manualChunks: {
 					react: ['react', 'react-dom'],
 					animation_lib: ['framer-motion'],
-					firebase: ['firebase/app', 'firebase/auth', 'firebase/firestore'],
 				},
 			},
 		},
