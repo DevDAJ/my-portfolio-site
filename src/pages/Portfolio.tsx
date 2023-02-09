@@ -57,10 +57,10 @@ export default function Portoflio() {
 							backgroundImage: `url(${project.images})`,
 						}}
 						className={classNames([
-							`flex flex-col lg:flex-row justify-end min-h-[calc(100vh-4rem)] md:max-h-[calc(100vh-4rem)] lg:aspect-video w-screen bg-top bg-cover bg-fixed bg-no-repeat`,
+							`flex flex-col lg:flex-row justify-end min-h-[calc(100vh-4rem)] md:max-h-[calc(100vh-4rem)] lg:aspect-video text-center w-screen bg-top bg-cover bg-fixed bg-no-repeat`,
 							index % 2 == 0
-								? 'lg:justify-start lg:text-left lg:bg-right'
-								: 'lg:justify-end lg:text-right lg:bg-left',
+								? 'lg:justify-start lg:bg-right'
+								: 'lg:justify-end lg:bg-left',
 							,
 						])}>
 						<motion.div
