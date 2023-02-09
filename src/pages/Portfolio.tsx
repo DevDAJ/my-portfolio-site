@@ -68,7 +68,7 @@ export default function Portoflio() {
 							initial='hidden'
 							whileInView='show'
 							className='flex flex-col items-center gap-2 p-12 bg-main lg:min-h-[inherit] justify-center lg:w-1/3'>
-							<h2 className='text-4xl glow font-bold text-ascent whitespace-nowrap'>
+							<h2 className='text-4xl glow font-bold text-ascent whitespace'>
 								{project.title}
 							</h2>
 							<p className='text-sm'>{project.description}</p>
