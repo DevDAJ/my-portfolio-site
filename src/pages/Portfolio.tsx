@@ -25,7 +25,6 @@ export default function Portoflio() {
 		)
 			.then((res) => res.json())
 			.then((data) => {
-				console.log(data);
 				setProjects(data);
 			});
 	}, []);
