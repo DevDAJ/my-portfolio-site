@@ -30,7 +30,7 @@ function Blog() {
 					<div className='px-3 w-[clamp(200px,90%,1028px)]'>
 						<h2 className='text-3xl'>
 							<strong>{post['title']}</strong>
-						</h2>
+						</h2> posted on {post['date']}
 						<div className='text-gray-400 overflow-hidden text-ellipsis whitespace-nowrap  '>
 							{post['content_text']}
 						</div>
