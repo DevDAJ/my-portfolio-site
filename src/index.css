@@ -57,7 +57,7 @@ span > span {
 }
 .content > h1 {
 	@apply md:text-6xl text-4xl font-bold after:content-[''] after:block after:w-auto after:h-1 after:bg-red-600 after:mt-4;
-}
+}ol > li
 .content > p > a {
 	@apply text-blue-400;
 }
@@ -73,4 +73,11 @@ span > span {
 }
 .content > ol > li {
 	@apply my-3;
+}
+
+.content > .title {
+	@apply md:text-6xl text-4xl font-bold after:content-[''] after:block after:w-auto after:h-1 after:bg-ascent after:mt-4 my-0;
+}
+.content > .date {
+	@apply text-4xl my-0;
 }

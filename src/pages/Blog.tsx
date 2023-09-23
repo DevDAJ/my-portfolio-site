@@ -1,19 +1,30 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-const posts = [
-	{
-		id: 1,
-		title: 'Hello World',
-		slug: 'hello-world',
-		contentText:
-			'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
-	},
-];
+import axios from 'axios';
+import headers from '../plugins/headers';
+interface TPost {
+	id: number;
+	title: string;
+	content_text: string;
+	date: string;
+}
+
 function Blog() {
+	const [posts, setPosts] = useState<Array<TPost>>([]);
+	useEffect(() => {
+		axios.get<TPost[]>('https://qhxdiysxdygclcgzwwnu.supabase.co/rest/v1/post', {
+			headers,
+			params: {
+				select: ('id,title,content_text,date')
+			}
+		})
+			.then(({data}) => setPosts(data));
+	}, []);
 	return (
 		<div className='mx-12'>
 			{posts.map((post) => (
 				<Link
-					to={`/blog/${post['slug']}`}
+					to={`/blog/${post['id']}`}
 					key={post['id']}
 					className='relative flex flex-wrap md:flex-nowrap flex-row border-y-2 py-3 my-2 rounded-md border-gray-700 justify-start items-center gap-2'>
 					<div className='px-3 w-[clamp(200px,90%,1028px)]'>
@@ -21,7 +32,7 @@ function Blog() {
 							<strong>{post['title']}</strong>
 						</h2>
 						<div className='text-gray-400 overflow-hidden text-ellipsis whitespace-nowrap  '>
-							{post['contentText']}
+							{post['content_text']}
 						</div>
 					</div>
 				</Link>

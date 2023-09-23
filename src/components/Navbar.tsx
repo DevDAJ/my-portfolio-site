@@ -34,7 +34,7 @@ function Navbar() {
 					</div>
 					<div className='md:hidden flex flex-col text-left my-24 gap-5'>
 						<NavItems
-							links={['Home', 'About', 'Portfolio', 'Blog']}
+							links={['Home', 'About', 'Portfolio', 'Blog', 'Resume']}
 							close={() => toggleMenu()}></NavItems>
 					</div>
 				</div>
@@ -44,7 +44,7 @@ function Navbar() {
 	top-0 left-0 z-50 w-screen bg-main shadow-sm shadow-black'>
 				<NavLogo />
 				<div className='nav-item-container'>
-					<NavItems links={['Home', 'About', 'Portfolio', 'Blog']}></NavItems>
+					<NavItems links={['Home', 'About', 'Portfolio', 'Blog', 'Resume']}></NavItems>
 				</div>
 			</nav>
 		</>

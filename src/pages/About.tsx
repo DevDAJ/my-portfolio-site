@@ -6,6 +6,7 @@ import {
 } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { motion } from 'framer-motion';
+import headers from '../plugins/headers';
 
 type Skill = {
 	name: string;
@@ -19,34 +20,29 @@ type Timeline = {
 	description: Array<string>;
 };
 
-const About: FC = ({}) => {
+const container = {
+	hidden: { opacity: 0 },
+	show: {
+		opacity: 1,
+		transition: {
+			staggerChildren: 0.05,
+		},
+	},
+};
+const listItem = {
+	hidden: { opacity: 0 },
+	show: { opacity: 1 },
+};
+
+const About: FC = () => {
 	const [skills, setSkills] = useState<Array<Skill>>();
 	const [timeline, setTimeline] = useState<Array<Timeline>>();
-	const container = {
-		hidden: { opacity: 0 },
-		show: {
-			opacity: 1,
-			transition: {
-				staggerChildren: 0.05,
-			},
-		},
-	};
-
-	const listItem = {
-		hidden: { opacity: 0 },
-		show: { opacity: 1 },
-	};
 	useEffect(() => {
 		fetch(
 			'https://qhxdiysxdygclcgzwwnu.supabase.co/rest/v1/skills?select=name%2Cicon',
 			{
 				method: 'GET',
-				headers: {
-					apikey:
-						'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFoeGRpeXN4ZHlnY2xjZ3p3d251Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzU0MTY0ODgsImV4cCI6MTk5MDk5MjQ4OH0.xBelqgXTEqgdMOhx-224kJlmNDYg9kXBVy1-iwRooXE',
-					Authorization:
-						'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFoeGRpeXN4ZHlnY2xjZ3p3d251Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzU0MTY0ODgsImV4cCI6MTk5MDk5MjQ4OH0.xBelqgXTEqgdMOhx-224kJlmNDYg9kXBVy1-iwRooXE',
-				},
+				headers,
 			}
 		)
 			.then((res) => res.json())
@@ -57,12 +53,7 @@ const About: FC = ({}) => {
 			'https://qhxdiysxdygclcgzwwnu.supabase.co/rest/v1/timeline?select=id,title,date,description',
 			{
 				method: 'GET',
-				headers: {
-					apikey:
-						'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFoeGRpeXN4ZHlnY2xjZ3p3d251Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzU0MTY0ODgsImV4cCI6MTk5MDk5MjQ4OH0.xBelqgXTEqgdMOhx-224kJlmNDYg9kXBVy1-iwRooXE',
-					Authorization:
-						'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFoeGRpeXN4ZHlnY2xjZ3p3d251Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzU0MTY0ODgsImV4cCI6MTk5MDk5MjQ4OH0.xBelqgXTEqgdMOhx-224kJlmNDYg9kXBVy1-iwRooXE',
-				},
+				headers,
 			}
 		)
 			.then((res) => res.json())
@@ -170,7 +161,7 @@ const About: FC = ({}) => {
 					{timeline?.map((item, index) => {
 						return (
 							<VerticalTimelineElement
-								key={index}
+								key={`${item.id}-${index.toString()}`}
 								className='vertical-timeline-element--work'
 								contentStyle={{ background: 'transparent', color: '#fff' }}
 								contentArrowStyle={{ borderRight: '7px solid gray' }}
@@ -182,7 +173,7 @@ const About: FC = ({}) => {
 								<ul className='list-outside'>
 									{item.description.map((desc, index) => {
 										return (
-											<li key={index} className='list-disc'>
+											<li key={`${desc}-${index.toString()}`}className='list-disc'>
 												{desc}
 											</li>
 										);
@@ -216,9 +207,10 @@ const About: FC = ({}) => {
 						{skills?.map((skill, index) => {
 							return (
 								<motion.div
-									key={index}
+									key={`${skill['name']}-${index.toString()}`}
 									variants={listItem}
-									className='flex flex-col items-center m-4 relative after:absolute after:text-transparent after:content-["asa"] after:aspect-square after:bg-[#721adf] after:top-4 after:-z-50 after:blur-xl'>
+									className='flex flex-col items-center m-4 relative after:absolute after:text-transparent
+									 after:content-["asa"] after:aspect-square after:bg-[#721adf] after:top-4 after:-z-50 after:blur-xl'>
 									<Icon
 										className='stroke-current '
 										width={50}

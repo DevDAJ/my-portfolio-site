@@ -2,6 +2,7 @@ import classNames from '../plugins/classNames';
 import { motion } from 'framer-motion';
 import { Icon } from '@iconify/react';
 import { useState, useEffect } from 'react';
+import headers from '../plugins/headers';
 
 type Project = {
 	title: string;
@@ -19,12 +20,7 @@ export default function Portoflio() {
 			'https://qhxdiysxdygclcgzwwnu.supabase.co/rest/v1/projects?select=*',
 			{
 				method: 'GET',
-				headers: {
-					apikey:
-						'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFoeGRpeXN4ZHlnY2xjZ3p3d251Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzU0MTY0ODgsImV4cCI6MTk5MDk5MjQ4OH0.xBelqgXTEqgdMOhx-224kJlmNDYg9kXBVy1-iwRooXE',
-					Authorization:
-						'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFoeGRpeXN4ZHlnY2xjZ3p3d251Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzU0MTY0ODgsImV4cCI6MTk5MDk5MjQ4OH0.xBelqgXTEqgdMOhx-224kJlmNDYg9kXBVy1-iwRooXE',
-				},
+				headers,
 			}
 		)
 			.then((res) => res.json())
@@ -52,7 +48,7 @@ export default function Portoflio() {
 			{projects.map((project, index) => {
 				return (
 					<div
-						key={index}
+						key={`${project.title}-${index.toString()}`}
 						style={{
 							backgroundImage: `url(${project.images})`,
 						}}
@@ -61,7 +57,6 @@ export default function Portoflio() {
 							index % 2 == 0
 								? 'lg:justify-start lg:bg-right'
 								: 'lg:justify-end lg:bg-left',
-							,
 						])}>
 						<motion.div
 							variants={container}
@@ -80,7 +75,7 @@ export default function Portoflio() {
 								{project.tech.map((tech, index) => {
 									return (
 										<motion.div
-											key={index}
+											key={`${tech}-${index.toString()}`}
 											variants={listItem}
 											className='flex flex-col items-center m-2 relative'>
 											<Icon
