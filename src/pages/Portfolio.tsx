@@ -42,6 +42,7 @@ export default function Portoflio() {
 		hidden: { opacity: 0 },
 		show: { opacity: 1 },
 	};
+	
 	return (
 		<div className='relative'>
 			{projects.map((project, index) => {
